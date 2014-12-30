@@ -11,6 +11,9 @@ extern int task_cap_rc(void);
 extern int loop_fast(void);//500hz
 extern int task_6050(void);
 extern int task_fast(void);//500hz
+extern int task_gps(void);
+extern int task_gsm(void);
+				 
 
 #ifdef __cplusplus
         }
