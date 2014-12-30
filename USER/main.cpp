@@ -32,7 +32,6 @@ void SYS_INIT(void)
 
     delay_ms(500);
 }
-extern int task_6050(void);
 
 int main(void)
 {
