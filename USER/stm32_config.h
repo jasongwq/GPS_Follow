@@ -27,25 +27,25 @@ Rothmarketing 90 CCW
 #include "stm32_config.h"
 */
 /***I2C CONGIG ***/
-#include "G32_I2c_Config.h"
+//#include "G32_I2c_Config.h"
 /***I2C CONGIG ***/
 /****************************************/
 /***24L01配置***/
-#include "G32_Nrf24l01_Config.h"
+//#include "G32_Nrf24l01_Config.h"
 /***24L01配置***/
 /****************************************/
 /***Ultrasonic***/
-#include "Ultrasonic_Config.h"
+//#include "Ultrasonic_Config.h"
 /***Ultrasonic***/
 /****************************************/
 /***USART***/
-#include "Usart_Config.h"
+//#include "Usart_Config.h"
 /***USART***/
 /****************************************/
 /*** LCD ***/
 /******************************/
 /***ourstm400240 CONGIG ***/
-#include "ourstm400240.h"
+//#include "ourstm400240.h"
 /***ourstm400240 CONGIG ***/
 /******************************/
 /*** LCD ***/
@@ -54,11 +54,11 @@ Rothmarketing 90 CCW
 /***TOUCH***/
 /****************************************/
 /***ADC***/
-#include "Adc_Config.h"
+//#include "Adc_Config.h"
 /***ADC***/
 /****************************************/
 /***PWM***/
-#include "Pwm_Config.h"
+//#include "Pwm_Config.h"
 /***PWM***/
 /****************************************/
 /***MPU6050***/
@@ -72,7 +72,7 @@ Rothmarketing 90 CCW
 /***FATFS***/
 /****************************************/
 /***DS18B20***/
-#include "DS18B20_Config.h"
+//#include "DS18B20_Config.h"
 /***DS18B20***/
 /****************************************/
 #ifdef __cplusplus

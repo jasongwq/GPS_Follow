@@ -21,9 +21,7 @@ void SYS_INIT(void)
     NVIC_Configuration();
     //uart_init (115200);
     //uart_init (115200);
-
     uart3_init(115200);
-
     Sys_Printf(Printf_USART, (char *)"\r\nPrintf_USART ok");
 
     delay_ms(500);
