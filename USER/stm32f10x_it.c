@@ -21,8 +21,8 @@ void USART1_IRQHandler(void)  //串口中断函数
 }
 void USART2_IRQHandler(void)  //串口中断函数
 {
-    // ATK_Usart2_IQR();
-    SYS_UART_IQR(USART2);
+    ATK_Usart2_IQR();
+    //SYS_UART_IQR(USART2);
 }
 void USART3_IRQHandler(void)  //串口中断函数
 {
