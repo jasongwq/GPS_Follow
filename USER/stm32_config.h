@@ -5,22 +5,22 @@
 #endif
 #define VERSIONS 2
 /* 
-1 é»‘æ¿
-2 yybç»¿æ¿
+1 ºÚ°å
+2 yybÂÌ°å
 */
 #define ROTATE90 0
 /*
 1 
 Rothmarketing 90 CCW
-æ–¹å‘å››è½´æ—‹è½¬90åº¦
+·½ÏòËÄÖáĞı×ª90¶È
 0
-ä¸æ—‹è½¬
+²»Ğı×ª
 */
 #define THROTTLE_INVERTED 1 //throttleinverted 1
 /*
-1 åè½¬
-0 ä¸åè½¬
-æ²¹é—¨åç›¸ å­¦é•¿é¥æ§éœ€è¦åç›¸
+1 ·´×ª
+0 ²»·´×ª
+ÓÍÃÅ·´Ïà Ñ§³¤Ò£¿ØĞèÒª·´Ïà
 */
 
 /*
@@ -30,9 +30,9 @@ Rothmarketing 90 CCW
 //#include "G32_I2c_Config.h"
 /***I2C CONGIG ***/
 /****************************************/
-/***24L01é…ç½®***/
+/***24L01ÅäÖÃ***/
 //#include "G32_Nrf24l01_Config.h"
-/***24L01é…ç½®***/
+/***24L01ÅäÖÃ***/
 /****************************************/
 /***Ultrasonic***/
 //#include "Ultrasonic_Config.h"

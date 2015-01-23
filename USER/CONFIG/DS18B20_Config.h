@@ -9,9 +9,9 @@
 #define DS18B20_IO_IN()  GPIOB_Init(0,8,PU);//{LCD_DS18B20_GPIO->CRH&=0XFFFFFFF0;LCD_DS18B20_GPIO->CRH|=8<<12;}
 #define DS18B20_IO_OUT() GPIOB_Init(0,3,PU);//{LCD_DS18B20_GPIO->CRH&=0XFFFFFFF0;LCD_DS18B20_GPIO->CRH|=3<<12;}
 
-//IO鎿嶄綔鍑芥暟
-#define DS18B20_DQ_OUT PBout(0) //鏁版嵁绔彛 PA0 
-#define DS18B20_DQ_IN  PBin(0)  //鏁版嵁绔彛 PA0 
+//IO操作函数
+#define DS18B20_DQ_OUT PBout(0) //数据端口 PA0 
+#define DS18B20_DQ_IN  PBin(0)  //数据端口 PA0 
 
 /***ds18b20***/
 

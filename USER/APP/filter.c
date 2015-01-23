@@ -2,7 +2,7 @@
 
 #include "MPU6050.h"
 #include <math.h>
-#define Gyr_Gain 0.061     // æ»¡é‡ç¨‹2000dpsæ—¶çµæ•åº¦(dps/digital)
+#define Gyr_Gain 0.061     // ÂúÁ¿³Ì2000dpsÊ±ÁéÃô¶È(dps/digital)
 #define pi 3.14159
 #include "control.h"
 
@@ -85,19 +85,19 @@ void Prepare_Data2(T_float_angle *angle_in)
 //   float omegay =  Gyr_Gain * (-gyro_in->Y);
 //   //        float omegaz =  Gyr_Gain * (gyro_in->Z);
 //   //
-//   float dt = 1 / 1000.0;  // å¾®åˆ†æ—¶é—´(s)
+//   float dt = 1 / 1000.0;  // Î¢·ÖÊ±¼ä(s)
 //   float angleAy = atan2(acc_in->Y, acc_in->Z) * 180 / pi;
 //   float angleAx = atan2(acc_in->X, acc_in->Z) * 180 / pi;
 
-//   // ä¸€é˜¶äº’è¡¥ç®—æ³•
+//   // Ò»½×»¥²¹Ëã·¨
 //   float K;
-//   K = PID_PID_1.I;                              // å¯¹åŠ é€Ÿåº¦è®¡å–å€¼çš„æƒé‡
+//   K = PID_PID_1.I;                              // ¶Ô¼ÓËÙ¶È¼ÆÈ¡ÖµµÄÈ¨ÖØ
 //   /*    float A = K / (K + dt);
 
 //       Com_anglex = A * (Com_anglex + omegay * dt) + (1 - A) * angleAx;
 //       //acc_in->X = (int16_t)(Com_anglex);
 //       //    //        acc_out->Y=(int16_t)(angleAx);
-//       //    //        angleG = angleG + omegay * dt;           // å¯¹è§’é€Ÿåº¦ç§¯åˆ†å¾—åˆ°çš„è§’åº¦(degree)
+//       //    //        angleG = angleG + omegay * dt;           // ¶Ô½ÇËÙ¶È»ı·ÖµÃµ½µÄ½Ç¶È(degree)
 //       //    //        acc_out->Z=(int16_t)(angleG);
 //       Com_angley = A * (Com_angley + omegax * dt) + (1 - A) * angleAy;
 //       //acc_in->Y = (int16_t)(Com_angley);
@@ -111,29 +111,29 @@ void Prepare_Data2(T_float_angle *angle_in)
 
 //       static float y1x;
 //       static float Com2_anglex;
-//       //// äºŒé˜¶äº’è¡¥ç®—æ³•
+//       //// ¶ş½×»¥²¹Ëã·¨
 //   //    K = 0;
 //       float x1 = (angleAx - Com2_anglex) * K * K;
 //       y1x = y1x + x1 * dt;
 //       float x2 = y1x + 2 * K * (angleAx - Com2_anglex) + omegax;
 //       Com2_anglex = Com2_anglex + x2 * dt;
 //       acc_out->X=Com2_anglex*100;
-//   // å¡å°”æ›¼æ»¤æ³¢
-////    Klm_angle += (omega - bias) * dt;          // å…ˆéªŒä¼°è®¡
+//   // ¿¨¶ûÂüÂË²¨
+////    Klm_angle += (omega - bias) * dt;          // ÏÈÑé¹À¼Æ
 ////    P_00 += -(P_10 + P_01) * dt + Q_angle * dt;
 ////    P_01 += -P_11 * dt;
 ////    P_10 += -P_11 * dt;
-////    P_11 += +Q_omega * dt;                     // å…ˆéªŒä¼°è®¡è¯¯å·®åæ–¹å·®
+////    P_11 += +Q_omega * dt;                     // ÏÈÑé¹À¼ÆÎó²îĞ­·½²î
 
 ////    float K_0 = P_00 / (P_00 + R_angle);
 ////    float K_1 = P_10 / (P_00 + R_angle);
 
 ////    bias += K_1 * (angleA - Klm_angle);
-////    Klm_angle += K_0 * (angleA - Klm_angle);   // åéªŒä¼°è®¡
+////    Klm_angle += K_0 * (angleA - Klm_angle);   // ºóÑé¹À¼Æ
 ////    P_00 -= K_0 * P_00;
 ////    P_01 -= K_0 * P_01;
 ////    P_10 -= K_1 * P_00;
-////    P_11 -= K_1 * P_01;                        // åéªŒä¼°è®¡è¯¯å·®åæ–¹å·®
+////    P_11 -= K_1 * P_01;                        // ºóÑé¹À¼ÆÎó²îĞ­·½²î
 //}
 
 

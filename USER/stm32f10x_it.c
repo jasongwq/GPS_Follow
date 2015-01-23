@@ -13,18 +13,18 @@ void (*TIM1_UP_IRQ)(void);
 void (*TIM1_TRG_COM_IRQ)(void);
 void (*TIM1_CC_IRQ)(void);
 extern void SYS_UART_IQR(USART_TypeDef *USARTx);
-void USART1_IRQHandler(void)  //ä¸²å£ä¸­æ–­å‡½æ•°
+void USART1_IRQHandler(void)  //´®¿ÚÖĞ¶Ïº¯Êı
 {
     // ATK_Usart1_IQR();
     SYS_UART_IQR(USART1);
 
 }
-void USART2_IRQHandler(void)  //ä¸²å£ä¸­æ–­å‡½æ•°
+void USART2_IRQHandler(void)  //´®¿ÚÖĞ¶Ïº¯Êı
 {
     ATK_Usart2_IQR();
     //SYS_UART_IQR(USART2);
 }
-void USART3_IRQHandler(void)  //ä¸²å£ä¸­æ–­å‡½æ•°
+void USART3_IRQHandler(void)  //´®¿ÚÖĞ¶Ïº¯Êı
 {
     //ATK_Usart3_IQR()
     SYS_UART_IQR(USART3);
@@ -160,8 +160,8 @@ void USBWakeUp_IRQHandler(void)
 }
 #include "sys_os.h"
 
-#ifdef OS_CRITICAL_METHOD   //å¦‚æœOS_CRITICAL_METHODå®šä¹‰äº†,è¯´æ˜ä½¿ç”¨ucosIIäº†.
-//systickä¸­æ–­æœåŠ¡å‡½æ•°,ä½¿ç”¨ucosæ—¶ç”¨åˆ°
+#ifdef OS_CRITICAL_METHOD   //Èç¹ûOS_CRITICAL_METHOD¶¨ÒåÁË,ËµÃ÷Ê¹ÓÃucosIIÁË.
+//systickÖĞ¶Ï·şÎñº¯Êı,Ê¹ÓÃucosÊ±ÓÃµ½
 #include "usr_usart.h"
 // int mytime;
 u32 SysTick_Time=0;
@@ -177,7 +177,7 @@ void SysTick_Handler(void)
     //     mytime = 0;
     // }
     UpdateTimers();
-    //RunTask(task5, 5); //ä»»åŠ¡0å…·æœ‰ç²¾ç¡®æŒ‰æ—¶è·å¾—æ‰§è¡Œçš„æƒé™ï¼Œè¦æ±‚ï¼štask0æ¯æ¬¡æ‰§è¡Œæ¶ˆè€—æ—¶é—´<0.5ä¸ª ticket
+    //RunTask(task5, 5); //ÈÎÎñ0¾ßÓĞ¾«È·°´Ê±»ñµÃÖ´ĞĞµÄÈ¨ÏŞ£¬ÒªÇó£ºtask0Ã¿´ÎÖ´ĞĞÏûºÄÊ±¼ä<0.5¸ö ticket
 }
 #endif
 

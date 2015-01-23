@@ -2,8 +2,8 @@
 #include "kalman.h"
 
 /*	
-	Q:è¿‡ç¨‹å™ªå£°ï¼ŒQå¢å¤§ï¼ŒåŠ¨æ€å“åº”å˜å¿«ï¼Œæ”¶æ•›ç¨³å®šæ€§å˜å
-	R:æµ‹é‡å™ªå£°ï¼ŒRå¢å¤§ï¼ŒåŠ¨æ€å“åº”å˜æ…¢ï¼Œæ”¶æ•›ç¨³å®šæ€§å˜å¥½	
+	Q:¹ı³ÌÔëÉù£¬QÔö´ó£¬¶¯Ì¬ÏìÓ¦±ä¿ì£¬ÊÕÁ²ÎÈ¶¨ĞÔ±ä»µ
+	R:²âÁ¿ÔëÉù£¬RÔö´ó£¬¶¯Ì¬ÏìÓ¦±äÂı£¬ÊÕÁ²ÎÈ¶¨ĞÔ±äºÃ	
 */
 
 double KalmanFilter(const double ResrcData,
@@ -25,14 +25,14 @@ double KalmanFilter(const double ResrcData,
 	double kg;
 
 	x_mid=x_last[i]; //x_last=x(k-1|k-1),x_mid=x(k|k-1)
-	p_mid=p_last[i]+Q; //p_mid=p(k|k-1),p_last=p(k-1|k-1),Q=å™ªå£°
-	kg=p_mid/(p_mid+R); //kgä¸ºkalman filterï¼ŒRä¸ºå™ªå£°
-	x_now=x_mid+kg*(ResrcData-x_mid);//ä¼°è®¡å‡ºçš„æœ€ä¼˜å€¼
+	p_mid=p_last[i]+Q; //p_mid=p(k|k-1),p_last=p(k-1|k-1),Q=ÔëÉù
+	kg=p_mid/(p_mid+R); //kgÎªkalman filter£¬RÎªÔëÉù
+	x_now=x_mid+kg*(ResrcData-x_mid);//¹À¼Æ³öµÄ×îÓÅÖµ
 		
-	p_now=(1-kg)*p_mid;//æœ€ä¼˜å€¼å¯¹åº”çš„covariance	
+	p_now=(1-kg)*p_mid;//×îÓÅÖµ¶ÔÓ¦µÄcovariance	
 
-	p_last[i] = p_now; //æ›´æ–°covarianceå€¼
-	x_last[i] = x_now; //æ›´æ–°ç³»ç»ŸçŠ¶æ€å€¼
+	p_last[i] = p_now; //¸üĞÂcovarianceÖµ
+	x_last[i] = x_now; //¸üĞÂÏµÍ³×´Ì¬Öµ
 
 	return x_now;		
 }

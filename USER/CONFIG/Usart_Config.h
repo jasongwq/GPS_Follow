@@ -17,11 +17,11 @@ USART3|  B10 B11 |   (C10 C11)  | (D8  D9)  |
 //#define DEBUG_USART USART1
 
 #define EN_USART_  (1)       //Enable(1)/Disable(0)
-#define EN_USART2_ (0)       //Enable(1)/Disable(0)
+#define EN_USART2_ (1)       //Enable(1)/Disable(0)
 #define EN_USART3_ (1)       //Enable(1)/Disable(0)
-#define EN_USART_RX             1       //ä½¿èƒ½ï¼ˆ1ï¼‰/ç¦æ­¢ï¼ˆ0ï¼‰ä¸²å£1æ¥æ”¶
-#define EN_USART2_RX            1       //ä½¿èƒ½ï¼ˆ1ï¼‰/ç¦æ­¢ï¼ˆ0ï¼‰ä¸²å£2æ¥æ”¶
-#define EN_USART3_RX            1       //ä½¿èƒ½ï¼ˆ1ï¼‰/ç¦æ­¢ï¼ˆ0ï¼‰ä¸²å£3æ¥æ”¶
+#define EN_USART_RX             1       //Ê¹ÄÜ£¨1£©/½ûÖ¹£¨0£©´®¿Ú1½ÓÊÕ
+#define EN_USART2_RX            1       //Ê¹ÄÜ£¨1£©/½ûÖ¹£¨0£©´®¿Ú2½ÓÊÕ
+#define EN_USART3_RX            1       //Ê¹ÄÜ£¨1£©/½ûÖ¹£¨0£©´®¿Ú3½ÓÊÕ
 
 #define AF_USART1_ (0)
 #define AF_USART2_ (0)
@@ -41,6 +41,6 @@ USART3|  B10 B11 |   (C10 C11)  | (D8  D9)  |
 #define EN_USART3_DMA_R  (1)       //Enable(1)/Disable(0)
 
 /***USART***/
-      //ä¸²å£
+      //´®¿Ú
 /****************************************/
 #endif

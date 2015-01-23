@@ -27,17 +27,17 @@ struct Parameter parameter = {\
 
 int mode2unm = 0;
 /*
-    u16 up;//è®¾å®šä¸Šé™
-    u16 down;//è®¾å®šä¸‹é™
-    u16 power;//å®é™…åŠŸç‡
-    u16 setpower;//è®¾å®šåŠŸç‡
-    u16 speed;//å®é™…é€Ÿåº¦
-    u16 setspeed;//å®é™…é€Ÿåº¦
-    u16 flag;//æ ‡å¿—ä½
-    u16 settemperature;//è®¾å®šæ¸©åº¦1
-        u16 settemperature2;//è®¾å®šæ¸©åº¦2
-    s16 fenshan;//é£é€ŸPWM
-    s16 dianzu;//ç”µé˜»PWM
+    u16 up;//Éè¶¨ÉÏÏŞ
+    u16 down;//Éè¶¨ÏÂÏŞ
+    u16 power;//Êµ¼Ê¹¦ÂÊ
+    u16 setpower;//Éè¶¨¹¦ÂÊ
+    u16 speed;//Êµ¼ÊËÙ¶È
+    u16 setspeed;//Êµ¼ÊËÙ¶È
+    u16 flag;//±êÖ¾Î»
+    u16 settemperature;//Éè¶¨ÎÂ¶È1
+        u16 settemperature2;//Éè¶¨ÎÂ¶È2
+    s16 fenshan;//·çËÙPWM
+    s16 dianzu;//µç×èPWM
         u16 time_flag;
         */
 extern u16 Temperature;//, humidity = 0;
@@ -84,8 +84,8 @@ int task4()
                 static int lastT;
 
                 cha = Temperature - parameter.settemperature;
-                // > æ£€æµ‹æ¸©åº¦é«˜ éœ€è¦é™æ¸©
-                if (flag == 1) //é™æ¸©ä¸­
+                // > ¼ì²âÎÂ¶È¸ß ĞèÒª½µÎÂ
+                if (flag == 1) //½µÎÂÖĞ
                 {
                     if (cha * flag > 30)
                     {
@@ -102,23 +102,23 @@ int task4()
                         parameter.fenshan = 600;
                         parameter.dianzu = 0;
                     }
-                    else if (cha * flag > 3) //å®é™…æ¸©åº¦é«˜
+                    else if (cha * flag > 3) //Êµ¼ÊÎÂ¶È¸ß
                     {
                         parameter.fenshan = 520;
                         parameter.dianzu = 0;
                     }
-                    else if (cha * flag > 1) //å®é™…æ¸©åº¦é«˜
+                    else if (cha * flag > 1) //Êµ¼ÊÎÂ¶È¸ß
                     {
                         parameter.fenshan = 500;
                         parameter.dianzu = 0;
                     }
-                    else if (cha * flag > 0) //å®é™…æ¸©åº¦é«˜
+                    else if (cha * flag > 0) //Êµ¼ÊÎÂ¶È¸ß
                     {
                         parameter.fenshan = 460;
                         parameter.dianzu = 0;
                     }
                 }
-                else if (flag == -1)//å‡æ¸©ä¸­
+                else if (flag == -1)//ÉıÎÂÖĞ
                 {
                     if (cha * flag > 150)
                     {
@@ -145,33 +145,33 @@ int task4()
                         parameter.fenshan = 0;
                         parameter.dianzu = 90;
                     }
-                    else if (cha * flag > 10) //å®é™…æ¸©åº¦ä½
+                    else if (cha * flag > 10) //Êµ¼ÊÎÂ¶ÈµÍ
                     {
                         parameter.fenshan = 0;
                         parameter.dianzu = 80;
                     }
-                    else if (cha * flag > 3) //å®é™…æ¸©åº¦ä½
+                    else if (cha * flag > 3) //Êµ¼ÊÎÂ¶ÈµÍ
                     {
                         parameter.fenshan = 0;
                         parameter.dianzu = 70;
                     }
-                    else if (cha * flag > 2) //å®é™…æ¸©åº¦ä½
+                    else if (cha * flag > 2) //Êµ¼ÊÎÂ¶ÈµÍ
                     {
                         parameter.fenshan = 0;
                         parameter.dianzu = 60;
                     }
-                    else if (cha * flag > 1) //å®é™…æ¸©åº¦ä½
+                    else if (cha * flag > 1) //Êµ¼ÊÎÂ¶ÈµÍ
                     {
                         parameter.fenshan = 0;
                         parameter.dianzu = 50;
                     }
-                    else if (cha * flag > 0) //å®é™…æ¸©åº¦ä½
+                    else if (cha * flag > 0) //Êµ¼ÊÎÂ¶ÈµÍ
                     {
                         parameter.fenshan = 0;
                         parameter.dianzu = 40;
                     }
                 }
-                if (lastT - Temperature) //é™æ¸©
+                if (lastT - Temperature) //½µÎÂ
                 {
                     flag = 1;
                 }
@@ -195,8 +195,8 @@ int task4()
                     static int lastT;
                     parameter.settemperature2 = FixedCurve[Curve][mode2unm] * 10;
                     cha = Temperature - parameter.settemperature2;
-                    // > æ£€æµ‹æ¸©åº¦é«˜ éœ€è¦é™æ¸©
-                    if (flag == 1) //é™æ¸©ä¸­
+                    // > ¼ì²âÎÂ¶È¸ß ĞèÒª½µÎÂ
+                    if (flag == 1) //½µÎÂÖĞ
                     {
                         if (cha * flag > 30)
                         {
@@ -213,23 +213,23 @@ int task4()
                             parameter.fenshan = 600;
                             parameter.dianzu = 0;
                         }
-                        else if (cha * flag > 3) //å®é™…æ¸©åº¦é«˜
+                        else if (cha * flag > 3) //Êµ¼ÊÎÂ¶È¸ß
                         {
                             parameter.fenshan = 520;
                             parameter.dianzu = 0;
                         }
-                        else if (cha * flag > 1) //å®é™…æ¸©åº¦é«˜
+                        else if (cha * flag > 1) //Êµ¼ÊÎÂ¶È¸ß
                         {
                             parameter.fenshan = 500;
                             parameter.dianzu = 0;
                         }
-                        else if (cha * flag > 0) //å®é™…æ¸©åº¦é«˜
+                        else if (cha * flag > 0) //Êµ¼ÊÎÂ¶È¸ß
                         {
                             parameter.fenshan = 460;
                             parameter.dianzu = 0;
                         }
                     }
-                    else if (flag == -1)//å‡æ¸©ä¸­
+                    else if (flag == -1)//ÉıÎÂÖĞ
                     {
                         if (cha * flag > 150)
                         {
@@ -256,34 +256,34 @@ int task4()
                             parameter.fenshan = 0;
                             parameter.dianzu = 120;
                         }
-                        else if (cha * flag > 10) //å®é™…æ¸©åº¦ä½
+                        else if (cha * flag > 10) //Êµ¼ÊÎÂ¶ÈµÍ
                         {
                             parameter.fenshan = 0;
                             parameter.dianzu = 110;
                         }
-                        else if (cha * flag > 3) //å®é™…æ¸©åº¦ä½
+                        else if (cha * flag > 3) //Êµ¼ÊÎÂ¶ÈµÍ
                         {
                             parameter.fenshan = 0;
                             parameter.dianzu = 90;
                         }
-                        else if (cha * flag > 2) //å®é™…æ¸©åº¦ä½
+                        else if (cha * flag > 2) //Êµ¼ÊÎÂ¶ÈµÍ
                         {
                             parameter.fenshan = 0;
                             parameter.dianzu = 80;
                         }
-                        else if (cha * flag > 1) //å®é™…æ¸©åº¦ä½
+                        else if (cha * flag > 1) //Êµ¼ÊÎÂ¶ÈµÍ
                         {
                             parameter.fenshan = 0;
                             parameter.dianzu = 70;
                         }
-                        else if (cha * flag > 0) //å®é™…æ¸©åº¦ä½
+                        else if (cha * flag > 0) //Êµ¼ÊÎÂ¶ÈµÍ
                         {
                             parameter.fenshan = 0;
                             parameter.dianzu = 60;
                         }
                     }
 
-                    if (lastT - Temperature) //é™æ¸©
+                    if (lastT - Temperature) //½µÎÂ
                     {
                         flag = 1;
                     }
@@ -333,7 +333,7 @@ int task4()
             }
         }
         {
-            //é™å®šå¹…åº¦
+            //ÏŞ¶¨·ù¶È
 
             if (parameter.fenshan > 799)parameter.fenshan = 799;
             else if (parameter.fenshan < 0)parameter.fenshan = 0;
@@ -346,7 +346,7 @@ int task4()
         }
         parameter.dianzu = parameter.dianzu * parameter.setpower / 799.0;
         parameter.fenshan = parameter.fenshan * parameter.setspeed / 799.0;
-        TIM_SetCompare1(TIM3, parameter.dianzu); //ç”µé˜»
+        TIM_SetCompare1(TIM3, parameter.dianzu); //µç×è
         TIM_SetCompare2(TIM3, parameter.fenshan); //1000 2ms 500 1ms
     }
     _EE

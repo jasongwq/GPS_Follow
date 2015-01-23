@@ -12,7 +12,7 @@
 #define RCC_LCD_LIGHT   RCC_APB2Periph_GPIOD
 #define LCD_LIGHT_GPIO  GPIOD
 #define LCD_LIGHT_Pin   GPIO_Pin_13
-#define LCD_LED_1       GPIO_SetBits(  LCD_LIGHT_GPIO,LCD_LIGHT_Pin);//å¼€èƒŒå…‰PCout(13) //LCDèƒŒå…‰             PD13 
+#define LCD_LED_1       GPIO_SetBits(  LCD_LIGHT_GPIO,LCD_LIGHT_Pin);//¿ª±³¹âPCout(13) //LCD±³¹â             PD13 
 #define LCD_LED_0       GPIO_ResetBits(LCD_LIGHT_GPIO,LCD_LIGHT_Pin);//
 
 //RD
@@ -45,7 +45,7 @@
 #define RCC_LCD_TOUCH_TCS   RCC_APB2Periph_GPIOB
 #define LCD_TOUCH_TCS_GPIO GPIOB
 #define LCD_TOUCH_TCS_Pin   GPIO_Pin_10
-//ä¸Žè§¦æ‘¸å±èŠ¯ç‰‡è¿žæŽ¥å¼•è„š
+//Óë´¥ÃþÆÁÐ¾Æ¬Á¬½ÓÒý½Å
 #define PEN     PBin(6)      //PF10 INT
 #define TCS     PBout(7)     //PB2  CS
 
@@ -62,7 +62,7 @@
 #define LCD_TOUCH_SCK_GPIO GPIOB
 #define LCD_TOUCH_SCK_Pin  GPIO_Pin_11
 
-//æ¨¡æ‹ŸSPIå¼•è„š
+//Ä£ÄâSPIÒý½Å
 #define DOUT    PBin (12)//PAin(6)     //PF8  MISO
 #define TDIN    PBout(13)//PAout(7)    //PF9  MOSI
 #define TCLK    PBout(11)//PAout(5)    //PB1  SCLK
@@ -73,11 +73,11 @@
 #define LCD_TP_yfac 0.109823
 #define LCD_TP_xoff (-18)
 #define LCD_TP_yoff (-22)
-//é»˜è®¤ä¸ºtouchtype=0çš„æ•°æ®.
+//Ä¬ÈÏÎªtouchtype=0µÄÊý¾Ý.
 #define LCD_TP_TOUCHTYPE 1
-//æ–°å¢žçš„å‚æ•°,å½“è§¦æ‘¸å±çš„å·¦å³ä¸Šä¸‹å®Œå…¨é¢ å€’æ—¶éœ€è¦ç”¨åˆ°.
-//touchtype=0çš„æ—¶å€™,é€‚åˆå·¦å³ä¸ºXåæ ‡,ä¸Šä¸‹ä¸ºYåæ ‡çš„TP.
-//touchtype=1çš„æ—¶å€™,é€‚åˆå·¦å³ä¸ºYåæ ‡,ä¸Šä¸‹ä¸ºXåæ ‡çš„TP.
+//ÐÂÔöµÄ²ÎÊý,µ±´¥ÃþÆÁµÄ×óÓÒÉÏÏÂÍêÈ«µßµ¹Ê±ÐèÒªÓÃµ½.
+//touchtype=0µÄÊ±ºò,ÊÊºÏ×óÓÒÎªX×ø±ê,ÉÏÏÂÎªY×ø±êµÄTP.
+//touchtype=1µÄÊ±ºò,ÊÊºÏ×óÓÒÎªY×ø±ê,ÉÏÏÂÎªX×ø±êµÄTP.
 #if LCD_TP_TOUCHTYPE
 #define LCD_TP_DEFCMD_RDX 0X90;
 #define LCD_TP_DEFCMD_RDY 0XD0;

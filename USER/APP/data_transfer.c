@@ -446,7 +446,7 @@ void Data_Send_PID2(void)
 #endif
 }
 
-//¡ö8£º·¢ËÍPID3
+//!"o8lbo��c"E'IPID3
 void Data_Send_PID3(void)
 {
     u8 _cnt = 0;
@@ -476,7 +476,7 @@ void Data_Send_PID3(void)
 #endif
 }
 
-//¡ö8£º·¢ËÍPID4
+//!"o8lbo��c"E'IPID4
 void Data_Send_PID4(void)
 {
     u8 _cnt = 0;

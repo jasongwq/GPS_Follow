@@ -611,6 +611,16 @@
               <FileType>8</FileType>
               <FilePath>.\USER\TASK\task_ultrasonic.cpp</FilePath>
             </File>
+            <File>
+              <FileName>task_gps.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\USER\TASK\task_gps.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>task_gsm.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\USER\TASK\task_gsm.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -735,6 +745,16 @@
               <FileName>bmp085.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\GLIB\PERIPHERAL\BMP085\bmp085.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPS_DRIVER.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\GLIB\PERIPHERAL\GPS\GPS_DRIVER.c</FilePath>
+            </File>
+            <File>
+              <FileName>sim900a.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\GLIB\PERIPHERAL\GSM\SIM900A\sim900a.c</FilePath>
             </File>
           </Files>
         </Group>

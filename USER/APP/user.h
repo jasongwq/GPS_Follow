@@ -10,28 +10,28 @@
 #include "usr_usart.h"
 struct Parameter
 {
-    u16 up;//è®¾å®šä¸Šé™
-    u16 down;//è®¾å®šä¸‹é™
-    u16 powerd;//å®é™…åŠŸç‡
-    u16 powerf;//å®é™…åŠŸç‡
-    u16 setpower;//è®¾å®šåŠŸç‡
-    u16 speed;//å®é™…é€Ÿåº¦
-    u16 setspeed;//å®é™…é€Ÿåº¦
-    u16 flag;//æ ‡å¿—ä½
-    u16 settemperature;//è®¾å®šæ¸©åº¦1
-    u16 settemperature2;//è®¾å®šæ¸©åº¦2
-    s16 fenshan;//é£é€ŸPWM
-    s16 dianzu;//ç”µé˜»PWM
+    u16 up;//Éè¶¨ÉÏÏŞ
+    u16 down;//Éè¶¨ÏÂÏŞ
+    u16 powerd;//Êµ¼Ê¹¦ÂÊ
+    u16 powerf;//Êµ¼Ê¹¦ÂÊ
+    u16 setpower;//Éè¶¨¹¦ÂÊ
+    u16 speed;//Êµ¼ÊËÙ¶È
+    u16 setspeed;//Êµ¼ÊËÙ¶È
+    u16 flag;//±êÖ¾Î»
+    u16 settemperature;//Éè¶¨ÎÂ¶È1
+    u16 settemperature2;//Éè¶¨ÎÂ¶È2
+    s16 fenshan;//·çËÙPWM
+    s16 dianzu;//µç×èPWM
     u16 time_flag;
-    u16 last_flag;//æ¨¡å¼
+    u16 last_flag;//Ä£Ê½
 };
 extern struct Parameter parameter;
 //struct PID
 //{
-//    s16 SetPoint; // è®¾å®šç›®æ ‡ Desired Value
-//    s16 Proportion; // æ¯”ä¾‹å¸¸æ•° Proportional Const
-//    s16 Integral; // ç§¯åˆ†å¸¸æ•° Integral Const
-//    s16 Derivative; // å¾®åˆ†å¸¸æ•° Derivative Const
+//    s16 SetPoint; // Éè¶¨Ä¿±ê Desired Value
+//    s16 Proportion; // ±ÈÀı³£Êı Proportional Const
+//    s16 Integral; // »ı·Ö³£Êı Integral Const
+//    s16 Derivative; // Î¢·Ö³£Êı Derivative Const
 //    s32 LastError; // Error[-1]
 //    s32 PrevError; // Error[-2]
 //    s32 SumError; // Sums of Errors

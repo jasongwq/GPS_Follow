@@ -22,8 +22,8 @@
 | Channel13 | C3          |  C3        |  C3        |
 | Channel14 | C4          |  C4        |            |
 | Channel15 | C5          |  C5        |            |
-| Channel16 | æ¸©åº¦ä¼ æ„Ÿå™¨  |           |            |
-| Channel17 | å†…éƒ¨å‚è€ƒç”µå‹|           |            |
+| Channel16 | ÎÂ¶È´«¸ĞÆ÷  |           |            |
+| Channel17 | ÄÚ²¿²Î¿¼µçÑ¹|           |            |
 |***************************************************/
 #define ADC1_DMA 1
 #define ADC1_DMAIRQ_ENABLE 0

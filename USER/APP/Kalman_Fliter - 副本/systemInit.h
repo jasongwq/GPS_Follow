@@ -2,7 +2,7 @@
 #define  __SYSTEM_INIT_H__
 
 
-//  åŒ…å«å¿…è¦çš„å¤´æ–‡ä»¶
+//  °üº¬±ØÒªµÄÍ·ÎÄ¼ş
 //#include  <hw_types.h>
 //#include  <hw_memmap.h>
 //#include  <hw_ints.h>
@@ -19,7 +19,7 @@
 //#include  "stdlib.h"
 #include  "math.h"
 
-//  å°†è¾ƒé•¿çš„æ ‡è¯†ç¬¦å®šä¹‰æˆè¾ƒçŸ­çš„å½¢å¼
+//  ½«½Ï³¤µÄ±êÊ¶·û¶¨Òå³É½Ï¶ÌµÄĞÎÊ½
 #define  SysCtlPeriEnable       SysCtlPeripheralEnable
 #define  SysCtlPeriDisable      SysCtlPeripheralDisable
 #define  GPIOPinTypeIn          GPIOPinTypeGPIOInput
@@ -32,15 +32,15 @@
 #define  ADCSequDataGet         ADCSequenceDataGet
 
 
-//  å£°æ˜å…¨å±€çš„ç³»ç»Ÿæ—¶é’Ÿå˜é‡
+//  ÉùÃ÷È«¾ÖµÄÏµÍ³Ê±ÖÓ±äÁ¿
 extern unsigned long TheSysClock;
 
 
-//  é˜²æ­¢JTAGå¤±æ•ˆ
+//  ·ÀÖ¹JTAGÊ§Ğ§
 extern void jtagWait(void);
 
 
-//  ç³»ç»Ÿæ—¶é’Ÿåˆå§‹åŒ–
+//  ÏµÍ³Ê±ÖÓ³õÊ¼»¯
 extern void clockInit(void);
 
 

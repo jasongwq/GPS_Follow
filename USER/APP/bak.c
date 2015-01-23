@@ -6,7 +6,7 @@ void Data_Save(u8 select)
 {
     RCC->APB1ENR |= 1 << 28;//RCC_APB1PeriphClockCmd(RCC_APB1Periph_PWR, ENABLE);
     RCC->APB1ENR |= 1 << 27;//RCC_APB1PeriphClockCmd(RCC_APB1Periph_BKP, ENABLE);
-    PWR->CR |= 1 << 8;      //DISENABLEå†™ä¿æŠ¤
+    PWR->CR |= 1 << 8;      //DISENABLEÐ´±£»¤
     switch (select)
     {
     case 1:
@@ -71,7 +71,7 @@ u16 Data_Read(void)
 };
 
 #define SIZE 21
-#define FLASH_SAVE_ADDR  0X08035000      //è®¾ç½®FLASH ä¿å­˜åœ°å€(å¿…é¡»ä¸ºå¶æ•°)
+#define FLASH_SAVE_ADDR  0X08035000      //ÉèÖÃFLASH ±£´æµØÖ·(±ØÐëÎªÅ¼Êý)
 
 void StmFlash_Save(void)
 {

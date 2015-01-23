@@ -28,11 +28,11 @@
 #define halfT 0.001f  // half the sample period(s)
 
 #define Gyro_Gr     0.0010653f
-#define Gyro_G      0.0610351                                //è§’é€Ÿåº¦å˜æˆåº¦ æ­¤å‚æ•°å¯¹åº”é™€èžºä»ª2000åº¦æ¯ç§’
+#define Gyro_G      0.0610351                                //½ÇËÙ¶È±ä³É¶È ´Ë²ÎÊý¶ÔÓ¦ÍÓÂÝÒÇ2000¶ÈÃ¿Ãë
 //#define Gyro_G 0.060975
-//#define Gyro_Gr        0.0010653                                //è§’é€Ÿåº¦å˜æˆå¼§åº¦ æ­¤å‚æ•°å¯¹åº”é™€èžºä»ª2000åº¦æ¯ç§’
-//é‡ç¨‹+-2000   16bit
-//4000/65536=0.06103515625 Â°/LSB
+//#define Gyro_Gr        0.0010653                                //½ÇËÙ¶È±ä³É»¡¶È ´Ë²ÎÊý¶ÔÓ¦ÍÓÂÝÒÇ2000¶ÈÃ¿Ãë
+//Á¿³Ì+-2000   16bit
+//4000/65536=0.06103515625 ¡ã/LSB
 //---------------------------------------------------------------------------------------------------
 // Variable definitions
 float q0 = 1, q1 = 0, q2 = 0, q3 = 0; // quaternion elements representing the estimated orientation
@@ -40,7 +40,7 @@ float exInt = 0, eyInt = 0, ezInt = 0;// scaled integral error
 //====================================================================================================
 // Function
 //====================================================================================================
-T_float_angle   Att_Angle;  //ATTå‡½æ•°è®¡ç®—å‡ºçš„å§¿æ€è§’
+T_float_angle   Att_Angle;  //ATTº¯Êý¼ÆËã³öµÄ×ËÌ¬½Ç
 //float position_x=0,position_y=0,position_z=0;
 float compass_yaw;
 float AngleOffset_Rol=0,AngleOffset_Pit=0;
@@ -59,23 +59,23 @@ void IMUupdate(S_INT16_XYZ *gyr, S_INT16_XYZ *acc, T_float_angle *angle)
     ax = ax / norm;
     ay = ay / norm;
     az = az / norm;
-    // æŠŠåŠ è®¡çš„ä¸‰ç»´å‘é‡è½¬æˆå•ä½å‘é‡ã€‚
+    // °Ñ¼Ó¼ÆµÄÈýÎ¬ÏòÁ¿×ª³Éµ¥Î»ÏòÁ¿¡£
     // estimated direction of gravity
     vx = 2 * (q1 * q3 - q0 * q2);
     vy = 2 * (q0 * q1 + q2 * q3);
     vz = q0 * q0 - q1 * q1 - q2 * q2 + q3 * q3;
-    // è¿™æ˜¯æŠŠå››å…ƒæ•°æ¢ç®—æˆã€Šæ–¹å‘ä½™å¼¦çŸ©é˜µã€‹ä¸­çš„ç¬¬ä¸‰åˆ—çš„ä¸‰ä¸ªå…ƒç´ ã€‚
-    // æ ¹æ®ä½™å¼¦çŸ©é˜µå’Œæ¬§æ‹‰è§’çš„å®šä¹‰ï¼Œåœ°ç†åæ ‡ç³»çš„é‡åŠ›å‘é‡ï¼Œè½¬åˆ°æœºä½“åæ ‡ç³»ï¼Œæ­£å¥½æ˜¯è¿™ä¸‰ä¸ªå…ƒç´ ã€‚
-    // æ‰€ä»¥è¿™é‡Œçš„vx\y\zï¼Œå…¶å®žå°±æ˜¯å½“å‰çš„æ¬§æ‹‰è§’ï¼ˆå³å››å…ƒæ•°ï¼‰çš„æœºä½“åæ ‡å‚ç…§ç³»ä¸Šï¼Œæ¢ç®—å‡ºæ¥çš„é‡åŠ›å•ä½å‘é‡ã€‚
+    // ÕâÊÇ°ÑËÄÔªÊý»»Ëã³É¡¶·½ÏòÓàÏÒ¾ØÕó¡·ÖÐµÄµÚÈýÁÐµÄÈý¸öÔªËØ¡£
+    // ¸ù¾ÝÓàÏÒ¾ØÕóºÍÅ·À­½ÇµÄ¶¨Òå£¬µØÀí×ø±êÏµµÄÖØÁ¦ÏòÁ¿£¬×ªµ½»úÌå×ø±êÏµ£¬ÕýºÃÊÇÕâÈý¸öÔªËØ¡£
+    // ËùÒÔÕâÀïµÄvx\y\z£¬ÆäÊµ¾ÍÊÇµ±Ç°µÄÅ·À­½Ç£¨¼´ËÄÔªÊý£©µÄ»úÌå×ø±ê²ÎÕÕÏµÉÏ£¬»»Ëã³öÀ´µÄÖØÁ¦µ¥Î»ÏòÁ¿¡£
     // error is sum of cross product between reference direction of field and direction measured by sensor
     ex = (ay * vz - az * vy);
     ey = (az * vx - ax * vz);
     ez = (ax * vy - ay * vx);
-    // axyzæ˜¯æœºä½“åæ ‡å‚ç…§ç³»ä¸Šï¼ŒåŠ é€Ÿåº¦è®¡æµ‹å‡ºæ¥çš„é‡åŠ›å‘é‡ï¼Œä¹Ÿå°±æ˜¯å®žé™…æµ‹å‡ºæ¥çš„é‡åŠ›å‘é‡ã€‚
-    // axyzæ˜¯æµ‹é‡å¾—åˆ°çš„é‡åŠ›å‘é‡ï¼Œvxyzæ˜¯é™€èžºç§¯åˆ†åŽçš„å§¿æ€æ¥æŽ¨ç®—å‡ºçš„é‡åŠ›å‘é‡ï¼Œå®ƒä»¬éƒ½æ˜¯æœºä½“åæ ‡å‚ç…§ç³»ä¸Šçš„é‡åŠ›å‘é‡ã€‚
-    // é‚£å®ƒä»¬ä¹‹é—´çš„è¯¯å·®å‘é‡ï¼Œå°±æ˜¯é™€èžºç§¯åˆ†åŽçš„å§¿æ€å’ŒåŠ è®¡æµ‹å‡ºæ¥çš„å§¿æ€ä¹‹é—´çš„è¯¯å·®ã€‚
-    // å‘é‡é—´çš„è¯¯å·®ï¼Œå¯ä»¥ç”¨å‘é‡å‰ç§¯ï¼ˆä¹Ÿå«å‘é‡å¤–ç§¯ã€å‰ä¹˜ï¼‰æ¥è¡¨ç¤ºï¼Œexyzå°±æ˜¯ä¸¤ä¸ªé‡åŠ›å‘é‡çš„å‰ç§¯ã€‚
-    // è¿™ä¸ªå‰ç§¯å‘é‡ä»æ—§æ˜¯ä½äºŽæœºä½“åæ ‡ç³»ä¸Šçš„ï¼Œè€Œé™€èžºç§¯åˆ†è¯¯å·®ä¹Ÿæ˜¯åœ¨æœºä½“åæ ‡ç³»ï¼Œè€Œä¸”å‰ç§¯çš„å¤§å°ä¸Žé™€èžºç§¯åˆ†è¯¯å·®æˆæ­£æ¯”ï¼Œæ­£å¥½æ‹¿æ¥çº æ­£é™€èžºã€‚ï¼ˆä½ å¯ä»¥è‡ªå·±æ‹¿ä¸œè¥¿æƒ³è±¡ä¸€ä¸‹ï¼‰ç”±äºŽé™€èžºæ˜¯å¯¹æœºä½“ç›´æŽ¥ç§¯åˆ†ï¼Œæ‰€ä»¥å¯¹é™€èžºçš„çº æ­£é‡ä¼šç›´æŽ¥ä½“çŽ°åœ¨å¯¹æœºä½“åæ ‡ç³»çš„çº æ­£ã€‚
+    // axyzÊÇ»úÌå×ø±ê²ÎÕÕÏµÉÏ£¬¼ÓËÙ¶È¼Æ²â³öÀ´µÄÖØÁ¦ÏòÁ¿£¬Ò²¾ÍÊÇÊµ¼Ê²â³öÀ´µÄÖØÁ¦ÏòÁ¿¡£
+    // axyzÊÇ²âÁ¿µÃµ½µÄÖØÁ¦ÏòÁ¿£¬vxyzÊÇÍÓÂÝ»ý·ÖºóµÄ×ËÌ¬À´ÍÆËã³öµÄÖØÁ¦ÏòÁ¿£¬ËüÃÇ¶¼ÊÇ»úÌå×ø±ê²ÎÕÕÏµÉÏµÄÖØÁ¦ÏòÁ¿¡£
+    // ÄÇËüÃÇÖ®¼äµÄÎó²îÏòÁ¿£¬¾ÍÊÇÍÓÂÝ»ý·ÖºóµÄ×ËÌ¬ºÍ¼Ó¼Æ²â³öÀ´µÄ×ËÌ¬Ö®¼äµÄÎó²î¡£
+    // ÏòÁ¿¼äµÄÎó²î£¬¿ÉÒÔÓÃÏòÁ¿²æ»ý£¨Ò²½ÐÏòÁ¿Íâ»ý¡¢²æ³Ë£©À´±íÊ¾£¬exyz¾ÍÊÇÁ½¸öÖØÁ¦ÏòÁ¿µÄ²æ»ý¡£
+    // Õâ¸ö²æ»ýÏòÁ¿ÈÔ¾ÉÊÇÎ»ÓÚ»úÌå×ø±êÏµÉÏµÄ£¬¶øÍÓÂÝ»ý·ÖÎó²îÒ²ÊÇÔÚ»úÌå×ø±êÏµ£¬¶øÇÒ²æ»ýµÄ´óÐ¡ÓëÍÓÂÝ»ý·ÖÎó²î³ÉÕý±È£¬ÕýºÃÄÃÀ´¾ÀÕýÍÓÂÝ¡££¨Äã¿ÉÒÔ×Ô¼ºÄÃ¶«Î÷ÏëÏóÒ»ÏÂ£©ÓÉÓÚÍÓÂÝÊÇ¶Ô»úÌåÖ±½Ó»ý·Ö£¬ËùÒÔ¶ÔÍÓÂÝµÄ¾ÀÕýÁ¿»áÖ±½ÓÌåÏÖÔÚ¶Ô»úÌå×ø±êÏµµÄ¾ÀÕý¡£
     // integral error scaled integral gain
     exInt = exInt + ex * Ki;
     eyInt = eyInt + ey * Ki;
@@ -84,27 +84,27 @@ void IMUupdate(S_INT16_XYZ *gyr, S_INT16_XYZ *acc, T_float_angle *angle)
     gx = gx + Kp * ex + exInt;
     gy = gy + Kp * ey + eyInt;
     gz = gz + Kp * ez + ezInt;
-    // ç”¨å‰ç§¯è¯¯å·®æ¥åšPIä¿®æ­£é™€èžºé›¶å
+    // ÓÃ²æ»ýÎó²îÀ´×öPIÐÞÕýÍÓÂÝÁãÆ«
     // integrate quaternion rate and normalise
     q0 = q0 + (-q1 * gx - q2 * gy - q3 * gz) * halfT;
     q1 = q1 + (q0 * gx + q2 * gz - q3 * gy) * halfT;
     q2 = q2 + (q0 * gy - q1 * gz + q3 * gx) * halfT;
     q3 = q3 + (q0 * gz + q1 * gy - q2 * gx) * halfT;
-    // å››å…ƒæ•°å¾®åˆ†æ–¹ç¨‹
+    // ËÄÔªÊýÎ¢·Ö·½³Ì
     // normalise quaternion
     norm = sqrt(q0 * q0 + q1 * q1 + q2 * q2 + q3 * q3);
     q0 = q0 / norm;
     q1 = q1 / norm;
     q2 = q2 / norm;
     q3 = q3 / norm;
-    // å››å…ƒæ•°è§„èŒƒåŒ–
+    // ËÄÔªÊý¹æ·¶»¯
     static float Yaw_I = 0;
     Yaw_I = (gyr->z * Gyro_G *0.01);
     angle->yaw =angle->yaw + Yaw_I;// (0.99) * (angle->yaw + Yaw_I) + (0.01) * (compass_yaw);
     //angle->yaw = atan2(2 * q1 * q2 + 2 * q0 * q3, -2 * q2*q2 - 2 * q3* q3 + 1)* 57.3; // yaw
     angle->pit = asin(-2 * q1 * q3 + 2 * q0 * q2) * 57.3; // pitch
     angle->rol = -atan2(2 * q2 * q3 + 2 * q0 * q1, -2 * q1 * q1 - 2 * q2 * q2 + 1) * 57.3; // roll
-    //å››å…ƒæ•°è½¬åŒ–æˆæ¬§æ‹‰è§’
+    //ËÄÔªÊý×ª»¯³ÉÅ·À­½Ç
 
 }
 ////====================================================================================================

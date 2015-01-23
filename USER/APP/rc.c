@@ -17,11 +17,11 @@ void Rc_DataAnl(u16 Rc_Pwm_In[5])
     Rc_Data.YAW             =   Rc_Pwm_In[2];
     Rc_Data.ROLL            =   Rc_Pwm_In[3];
     Rc_Data.PITCH           =   Rc_Pwm_In[1];
-    Rc_Data.AUX1            =   Rc_Pwm_In[0];//Â∑¶
+    Rc_Data.AUX1            =   Rc_Pwm_In[0];//◊Û
     Rc_Data.AUX2            =   Rc_Pwm_In[5];
     Rc_Data.AUX3            =   Rc_Pwm_In[0];
     Rc_Data.AUX4            =   Rc_Pwm_In[0];
-    Rc_Data.AUX5            =   Rc_Pwm_In[0];//Âè≥
+    Rc_Data.AUX5            =   Rc_Pwm_In[0];//”“
     Rc_Data.AUX6            =   Rc_Pwm_In[0];
 }
 void Rc_GetValue(T_RC_Data *temp)
@@ -62,10 +62,10 @@ void RC_Analyse(T_RC_Data *rc_data, T_Control *ctl_data)
             }
         else
             fun_cnt = 0;
-    }//Ëß£ÈîÅ
+    }//Ω‚À¯
     {
-        //ÂºÄÂÆöÈ´ò
-        //Âú®ÂÖ≥Èó≠ÊÉÖÂÜµ‰∏ãÊâçËÉΩÂºÄ
+        //ø™∂®∏ﬂ
+        //‘⁄πÿ±’«Èøˆœ¬≤≈ƒ‹ø™
         static u16 fun_cnt2 = 0;
         if (rc_data->AUX1 > 1500 && (0 == ctl_data->ALT_ON_OFF))
         {
@@ -94,7 +94,7 @@ void RC_Analyse(T_RC_Data *rc_data, T_Control *ctl_data)
         }
     }
     {
-        //‰øùÂ≠òflash
+        //±£¥Êflash
         //           throrrle min
         //           yaw      max
         //           roll     min

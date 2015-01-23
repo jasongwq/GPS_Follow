@@ -11,7 +11,7 @@ u8 UP_EN = 0, DOWN_EN = 0, LEFT_EN = 0, RIGHT_EN = 0 ;
 #include "usr_usart.h"
 void some(USART_TypeDef *USARTx)
 {
-    //æŽ¥æ”¶ä¸­æ–­ (æŽ¥æ”¶å¯„å­˜å™¨éžç©º)
+    //½ÓÊÕÖÐ¶Ï (½ÓÊÕ¼Ä´æÆ÷·Ç¿Õ)
     if (USARTx->SR & (1 << 5)) //if(USART_GetITStatus(USARTx, USART_IT_RXNE) != RESET)
     {
         u8 com_data = USARTx->DR;

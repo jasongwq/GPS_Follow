@@ -2,7 +2,7 @@
 
 void UI_Init(void)
 {
-    //æ³¢å½¢
+    //²¨ĞÎ
     but[0].s = 320 - 165;
     but[0].x = 320 - 5;
     but[0].z = 5;
@@ -10,28 +10,28 @@ void UI_Init(void)
     LCD_DrawRectangle(but[0].z, but[0].s, but[0].y, but[0].x);
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 1
-    //æ³¢å½¢ é¢œè‰²
+    //²¨ĞÎ ÑÕÉ«
     but[1].s = 320 - 75        ;
     but[1].x = 320 - 60        ;
     but[1].z = 240 - 20        ;
     but[1].y = 240 - 5         ;
     LCD_Fill(         but[1].z, but[1].s, but[1].y, but[1].x, BLACK);
-    LCD_ShowString(but[1].z, but[1].x - 16, 12 * 16, 16, 16, "R"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[1].z, but[1].x - 16, 12 * 16, 16, 16, "R"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 2
-    //æ³¢å½¢ é¢œè‰²
+    //²¨ĞÎ ÑÕÉ«
     but[Button_num].s = 320 - 95        ;
     but[Button_num].x = 320 - 80        ;
     but[Button_num].z = 240 - 20        ;
     but[Button_num].y = 240 - 5         ;
     LCD_Fill(      but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x, RED);
-    LCD_ShowString(but[Button_num].z, but[Button_num].x - 16, 12 * 16, 16, 16, "S"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[Button_num].z, but[Button_num].x - 16, 12 * 16, 16, 16, "S"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 3
-    //åŠŸç‡
+    //¹¦ÂÊ
     but[3].s = 80       ;
     but[3].x = 110      ;
     but[3].z = 160      ;
@@ -39,113 +39,113 @@ void UI_Init(void)
 
     LCD_DrawRectangle(but[3].y, but[3].s, but[3].y + 30, but[3].x);
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
-    LCD_ShowString(but[3].z, but[3].s, 5 * 8, 16, 16, "Power"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
-    LCD_ShowString(but[3].z, but[3].s + 16, 5 * 8, 16, 16, "( w )"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[3].z, but[3].s, 5 * 8, 16, 16, "Power"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
+    LCD_ShowString(but[3].z, but[3].s + 16, 5 * 8, 16, 16, "( w )"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 4
-    //è½¬é€Ÿ
+    //×ªËÙ
     but[4].s = 120      ;
     but[4].x = 150      ;
     but[4].z = 160 ;
     but[4].y = 200 ;
-    LCD_ShowString(but[4].z, but[4].s, 5 * 8, 16, 16, "Speed"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
-    LCD_ShowString(but[4].z, but[4].s + 16, 5 * 8, 16, 16, "(r/s)"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[4].z, but[4].s, 5 * 8, 16, 16, "Speed"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
+    LCD_ShowString(but[4].z, but[4].s + 16, 5 * 8, 16, 16, "(r/s)"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 
     LCD_DrawRectangle(but[4].y, but[4].s, but[4].y + 30, but[4].x);
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 5
-    //ä¸Šé™
+    //ÉÏÏŞ
     but[5].s = 80       ;
     but[5].x = 110      ;
     but[5].z = 80       ;
     but[5].y = 120      ;
-    LCD_ShowString(but[5].z, but[5].s, 5 * 8, 16, 16, "Up"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
-    LCD_ShowString(but[Button_num].z, but[Button_num].s + 16, 5 * 8, 16, 16, "( C ))"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[5].z, but[5].s, 5 * 8, 16, 16, "Up"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
+    LCD_ShowString(but[Button_num].z, but[Button_num].s + 16, 5 * 8, 16, 16, "( C ))"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 
     LCD_DrawRectangle(but[5].y, but[5].s, but[5].y + 30, but[5].x);
     LCD_DrawRectangle(but[5].z, but[5].s, but[5].y, but[5].x);
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 6
-    //ä¸‹é™
+    //ÏÂÏŞ
     but[Button_num].s = 120     ;
     but[Button_num].x = 150     ;
     but[Button_num].z = 80      ;
     but[Button_num].y = 120     ;
-    LCD_ShowString(but[Button_num].z, but[Button_num].s, 5 * 8, 16, 16, "Down"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
-    LCD_ShowString(but[Button_num].z, but[Button_num].s + 16, 5 * 8, 16, 16, "( C ))"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[Button_num].z, but[Button_num].s, 5 * 8, 16, 16, "Down"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
+    LCD_ShowString(but[Button_num].z, but[Button_num].s + 16, 5 * 8, 16, 16, "( C ))"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 
     LCD_DrawRectangle(but[Button_num].y, but[Button_num].s, but[Button_num].y + 30, but[Button_num].x);
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 7
-    //å‡
+    //¼õ
     but[Button_num].s = 5     ;
     but[Button_num].x = 75    ;
     but[Button_num].z = 180   ;
     but[Button_num].y = 235   ;
-    //LCD_ShowString(but[Button_num].z,but[Button_num].s,5*8,16,16,"Down");   //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    //LCD_ShowString(but[Button_num].z,but[Button_num].s,5*8,16,16,"Down");   //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
-    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].s + 5, but[Button_num].y - 5, but[Button_num].s + 5); //ä¸Šä¾§
-    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].s + 5, but[Button_num].y - 27, but[Button_num].x - 5); //å·¦ä¾§
-    LCD_DrawLine(but[Button_num].y - 5, but[Button_num].s - 5, but[Button_num].y - 27, but[Button_num].x - 5); //å³ä¾§
+    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].s + 5, but[Button_num].y - 5, but[Button_num].s + 5); //ÉÏ²à
+    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].s + 5, but[Button_num].y - 27, but[Button_num].x - 5); //×ó²à
+    LCD_DrawLine(but[Button_num].y - 5, but[Button_num].s - 5, but[Button_num].y - 27, but[Button_num].x - 5); //ÓÒ²à
 
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 8
-    //åŠ 
+    //¼Ó
     but[Button_num].s = 5     ;
     but[Button_num].x = 75    ;
     but[Button_num].z = 120   ;
     but[Button_num].y = 175   ;
-    //LCD_ShowString(but[Button_num].z,but[Button_num].s,5*8,16,16,"Down");   //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    //LCD_ShowString(but[Button_num].z,but[Button_num].s,5*8,16,16,"Down");   //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
-    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].x - 5, but[Button_num].y - 5, but[Button_num].x - 5); //ä¸‹ä¾§
-    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].x - 5, but[Button_num].y - 27, but[Button_num].s + 5); //å·¦ä¾§
-    LCD_DrawLine(but[Button_num].y - 5, but[Button_num].x - 5, but[Button_num].y - 27, but[Button_num].s + 5); //å³ä¾§
+    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].x - 5, but[Button_num].y - 5, but[Button_num].x - 5); //ÏÂ²à
+    LCD_DrawLine(but[Button_num].z + 5, but[Button_num].x - 5, but[Button_num].y - 27, but[Button_num].s + 5); //×ó²à
+    LCD_DrawLine(but[Button_num].y - 5, but[Button_num].x - 5, but[Button_num].y - 27, but[Button_num].s + 5); //ÓÒ²à
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 9
-    //æ¨¡å¼äºŒ
+    //Ä£Ê½¶ş
     but[Button_num].s = 5     ;
     but[Button_num].x = 75    ;
     but[Button_num].z = 60    ;
     but[Button_num].y = 115   ;
-    LCD_ShowString(but[Button_num].z, but[Button_num].s, 6 * 8, 16, 16, "Mode 2"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[Button_num].z, but[Button_num].s, 6 * 8, 16, 16, "Mode 2"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 10
-    //æ¨¡å¼ä¸€
+    //Ä£Ê½Ò»
     but[Button_num].s = 5     ;
     but[Button_num].x = 75    ;
     but[Button_num].z = 5     ;
     but[Button_num].y = 55    ;
-    LCD_ShowString(but[Button_num].z, but[Button_num].s, 6 * 8, 16, 16, "Mode 1"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[Button_num].z, but[Button_num].s, 6 * 8, 16, 16, "Mode 1"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
     LCD_DrawRectangle(but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x);
 #undef Button_num
     /////////////////////////////////////////////////////////////////////////
 #define Button_num 11
-    //æ³¢å½¢ é¢œè‰²
+    //²¨ĞÎ ÑÕÉ«
     but[Button_num].s = 320 - 55        ;
     but[Button_num].x = 320 - 40        ;
     but[Button_num].z = 240 - 20        ;
     but[Button_num].y = 240 - 5         ;
     LCD_Fill(      but[Button_num].z, but[Button_num].s, but[Button_num].y, but[Button_num].x, BLUE);
-    LCD_ShowString(but[Button_num].z, but[Button_num].x - 16, 12 * 16, 16, 16, "R"); //æ˜¾ç¤ºä¸€ä¸ªå­—ç¬¦ä¸²,12/16å­—ä½“
+    LCD_ShowString(but[Button_num].z, but[Button_num].x - 16, 12 * 16, 16, 16, "R"); //ÏÔÊ¾Ò»¸ö×Ö·û´®,12/16×ÖÌå
 #undef Button_num
     {
-        //å·¦ä¸Šåæ ‡
+        //×óÉÏ×ø±ê
         LCD_ShowChar(but[0].z + 8, but[0].s - 16, '.', 16, 0);
         LCD_ShowChar(but[0].z + 24, but[0].s - 16, 'C', 16, 0);
-        LCD_ShowNum( but[0].z , but[0].s + - 16, 0, 1, 16); //æ˜¾ç¤ºæ­£æ•°éƒ¨åˆ†
-        LCD_ShowNum( but[0].z + 16, but[0].s + - 16, 5, 1, 16); //æ˜¾ç¤ºæ­£æ•°éƒ¨åˆ†
+        LCD_ShowNum( but[0].z , but[0].s + - 16, 0, 1, 16); //ÏÔÊ¾ÕıÊı²¿·Ö
+        LCD_ShowNum( but[0].z + 16, but[0].s + - 16, 5, 1, 16); //ÏÔÊ¾ÕıÊı²¿·Ö
     }
 }
 

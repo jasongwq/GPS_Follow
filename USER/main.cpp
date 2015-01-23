@@ -34,7 +34,7 @@ int main(void)
     while (1)
     {
         RunTaskA(task_gps,0);
-        //RunTaskA(task_gsm, 1);
-        RunTaskA(task_led, 6);
+        RunTaskA(task_gsm,2);
+        RunTaskA(task_led,3);
     }
 }
